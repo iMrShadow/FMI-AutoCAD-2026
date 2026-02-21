@@ -1,0 +1,13 @@
+Layer Make "Smth" Color 6 ""
+Box C 0,0,0 L 10 10 10
+Sphere 0,0,0 7.6
+intersect all
+
+-layer
+M
+Layer1
+C 35
+Layer1
+L
+dashed2
+Layer1

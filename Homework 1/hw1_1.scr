@@ -1,0 +1,4 @@
+Box C 0,0,0 L 10 10 10
+Sphere 0,0,0 7.6
+intersect all
+
