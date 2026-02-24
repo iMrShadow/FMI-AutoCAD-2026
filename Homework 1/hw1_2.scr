@@ -1,13 +1,37 @@
-Layer Make "Smth" Color 6 ""
-Box C 0,0,0 L 10 10 10
-Sphere 0,0,0 7.6
-intersect all
+;Създаваме зеления слой
+-LAYER
+Make
+SimpleCircle
+Color
+50
+SimpleCircle
 
--layer
-M
-Layer1
-C 35
-Layer1
-L
-dashed2
-Layer1
+;Чертаем проста окръжност
+CIRCLE
+0,0
+150
+;Създаваме нов червен слой
+-LAYER
+Make
+Star
+Color
+160
+Star
+
+;Чертаем звезда с 5 точки
+LINE
+0.00,150.00
+88.15,-121.36
+-142.63,46.36
+142.63,46.36
+-88.15,-121.36
+0.00,150.00
+
+;Връщаме се в главния слой
+-LAYER
+Set
+0
+
+;Настройваме зуум-а
+ZOOM
+Extents
