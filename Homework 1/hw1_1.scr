@@ -1,17 +1,17 @@
-SNAPMODE
+._snapmode
 0
-OSMODE
+._osmode
 0
-BOX
+._box
 C
 0,0,0
 L
 10
 10
 10
-SPHERE
+._sphere
 0,0,0
 7.6
-INTERSECT
-all
+._intersect
+All
 

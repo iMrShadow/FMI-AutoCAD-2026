@@ -1,29 +1,29 @@
-SNAPMODE
+._snapmode
 0
-OSMODE
+._osmode
 0
-; Създаваме зеления слой
--LAYER
+; Create the green layer
+._-layer
 Make
 SimpleCircle
 Color
 50
 SimpleCircle
 
-; Чертаем проста окръжност
-CIRCLE
+; Draw a simple circle
+._circle
 0,0
 150
-; Създаваме нов червен слой
--LAYER
+; Create the red layer
+._-layer
 Make
 Star
 Color
 160
 Star
 
-; Чертаем звезда с 5 точки
-LINE
+; Draw a star with 5 points
+._line
 0.00,150.00
 88.15,-121.36
 -142.63,46.36
@@ -31,11 +31,11 @@ LINE
 -88.15,-121.36
 0.00,150.00
 
-; Връщаме се в главния слой
--LAYER
+; Return to the main layer
+._-layer
 Set
 0
 
-; Настройваме зуум-а
-ZOOM
+; Tweak the zoom
+._zoom
 Extents

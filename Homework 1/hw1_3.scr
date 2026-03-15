@@ -1,74 +1,74 @@
-SNAPMODE
+._snapmode
 0
-OSMODE
+._osmode
 0
-; Създаваме слоевете за камерата
-; Слой за тялото на камерата
--LAYER
+; Create the layers for the camera
+; Layer for the camera body
+._-layer
 Make
 CameraBody
 Color
 50
 CameraBody
 
-; Слой за обектива
--LAYER
+; Layer for the lens
+._-layer
 Make
 CameraLens
 Color
 160
 CameraLens
 
-; Слой за стъклото на обектива
--LAYER
+; Layer for the lens glass
+._-layer
 Make
 CameraLensGlass
 Color
 30
 CameraLensGlass
 
-; Стъклото на обектива
--LAYER
+; Lens glass
+._-layer
 Set
 CameraLensGlass
 
-BOX
+._box
 C
 0,4.5,0
 L
 4
 4
 4
-SPHERE
+._sphere
 0,0,0
 5
-INTERSECT
-ALL
+._intersect
+All
 
-ROTATE3D
+._rotate3d
 L
 
 X
 0,0,0
 180
-MOVE
+._move
 L
 
 0,0,0
 -1,-3.5,0
-CHPROP
+._chprop
 L
 
 Color
 255
 
-; Тялото на камерата
--LAYER
+; Camera body
+._-layer
 Set
 CameraBody
 
-; Главната част на тялото
-PLINE
+; Main part of the body
+._pline
 7.5,4.5
 7.5,-4.5
 A
@@ -103,100 +103,100 @@ R
 7.5,4.5
 L
 C
-EXTRUDE
+._extrude
 L
 
 5
-ROTATE3D
+._rotate3d
 L
 
 X
 0,0,0
 90
-CHPROP
+._chprop
 L
 
 Color
 140
 
-; Горния бутон
-BOX
+; Upper button
+._box
 C
 5.5,-3.5,5
 L
 2
 1
 1
-CHPROP
+._chprop
 L
 
 Color
 20
 
-; Лампата за светкавицата
-BOX
+; Flash
+._box
 C
 5.5,-5,3.5
 L
 2.5
 0.1
 1
-CHPROP
+._chprop
 L
 
 Color
 255
 
--LAYER
+._-layer
 Set
 CameraLens
 
-; Обектив (задна част)
-CYLINDER
+; Lens (rear)
+._cylinder
 0,0,0
 4.5
 1.5
-ROTATE3D
+._rotate3d
 L
 
 X
 0,0,0
 90
-MOVE
+._move
 L
 
 0,0,0
 -1,-5,0
-CHPROP
+._chprop
 L
 
 Color
 250
 
-; Обектив (предна част)
-CYLINDER
+; Lens (front)
+._cylinder
 0,0,0
 3.5
 3
-ROTATE3D
+._rotate3d
 L
 
 X
 0,0,0
 90
-MOVE
+._move
 L
 
 0,0,0
 -1,-5,0
-CHPROP
+._chprop
 L
 
 Color
 250
 
-UNION
-ALL
+._union
+All
 
-ZOOM
+._zoom
 Extents
