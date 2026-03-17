@@ -22,30 +22,46 @@
 )
 
 ; Task 1
-
 ; 2.5.4
-(defun C:RECTANGLE1 (/ center A B) 
+(defun C:RECTANGLE1 (/ center A B oldsnap) 
+  (setq oldsnap (getvar "osmode"))
+  (setvar "osmode" 0)
+
   (setq center (getpoint "\nEnter center: "))
   (setq A (getreal "\nEnter width along X (side A): "))
   (setq B (getreal "\nEnter height along Y (side B): "))
 
   (draw-rectangle center A B)
+
+  (setvar "osmode" oldsnap)
+
   (print "Rectangle created.")
   (princ)
 )
 
 ; 2.5.5
-(defun C:TRIANGLE1 (/ center A) 
+(defun C:TRIANGLE1 (/ center A oldsnap) 
+  (setq oldsnap (getvar "osmode"))
+  (setvar "osmode" 0)
+
   (setq center (getpoint "\nEnter center: "))
   (setq A (getreal "\nEnter side length: "))
 
   (draw-triangle center A)
+
+  (setvar "osmode" oldsnap)
+
   (print "Equilateral triangle created.")
   (princ)
 )
 
 ; Task 2
-(defun C:DRAWFIGURES (/ start-point center-points side diameter rectangle-side) 
+(defun C:DRAWFIGURES (/ start-point center-points side diameter rectangle-side 
+                      divider oldsnap
+                     ) 
+  (setq oldsnap (getvar "osmode"))
+  (setvar "osmode" 0)
+
   (setq start-point (getpoint "\nEnter start point: "))
   (setq center-points (list start-point 
                             (list (+ (car start-point) 20) (cadr start-point))
@@ -57,16 +73,23 @@
   (setq side 10)
   (setq diameter 10)
   (setq rectangle-side 6)
+  (setq divider 2.0)
 
   (draw-rectangle (nth 0 center-points) side side)
   (draw-triangle (nth 1 center-points) side)
   (command "_.circle" (nth 2 center-points) "D" diameter)
   (draw-rectangle (nth 3 center-points) rectangle-side side)
 
-  (draw-rectangle (nth 3 center-points) (/ side 2.0) (/ side 2.0))
-  (draw-triangle (nth 2 center-points) (/ side 2.0))
-  (command "_.circle" (nth 1 center-points) "D" (/ diameter 2.0))
-  (draw-rectangle (nth 0 center-points) (/ rectangle-side 2.0) (/ side 2.0))
+  (draw-rectangle (nth 3 center-points) (/ side divider) (/ side divider))
+  (draw-triangle (nth 2 center-points) (/ side divider))
+  (command "_.circle" (nth 1 center-points) "D" (/ diameter divider))
+  (draw-rectangle 
+    (nth 0 center-points)
+    (/ rectangle-side divider)
+    (/ side divider)
+  )
+
+  (setvar "osmode" oldsnap)
 
   (print "Figures created.")
   (princ)
