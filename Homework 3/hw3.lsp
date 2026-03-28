@@ -70,9 +70,9 @@
                       )
   )
 
-  (setq side 10)
-  (setq diameter 10)
-  (setq rectangle-side 6)
+  (setq side 10.0)
+  (setq diameter 10.0)
+  (setq rectangle-side 6.0)
   (setq divider 2.0)
 
   (draw-rectangle (nth 0 center-points) side side)
