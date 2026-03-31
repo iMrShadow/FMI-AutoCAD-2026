@@ -24,8 +24,8 @@
 ; Task 1
 ; 2.5.4
 (defun C:RECTANGLE1 (/ center A B oldsnap) 
-  (setq oldsnap (getvar "osmode"))
-  (setvar "osmode" 0)
+  (setq oldsnap (getvar "OSMODE"))
+  (setvar "OSMODE" 0)
 
   (setq center (getpoint "\nEnter center: "))
   (setq A (getreal "\nEnter width along X (side A): "))
@@ -33,7 +33,7 @@
 
   (draw-rectangle center A B)
 
-  (setvar "osmode" oldsnap)
+  (setvar "OSMODE" oldsnap)
 
   (print "Rectangle created.")
   (princ)
@@ -41,15 +41,15 @@
 
 ; 2.5.5
 (defun C:TRIANGLE1 (/ center A oldsnap) 
-  (setq oldsnap (getvar "osmode"))
-  (setvar "osmode" 0)
+  (setq oldsnap (getvar "OSMODE"))
+  (setvar "OSMODE" 0)
 
   (setq center (getpoint "\nEnter center: "))
   (setq A (getreal "\nEnter side length: "))
 
   (draw-triangle center A)
 
-  (setvar "osmode" oldsnap)
+  (setvar "OSMODE" oldsnap)
 
   (print "Equilateral triangle created.")
   (princ)
@@ -59,8 +59,8 @@
 (defun C:DRAWFIGURES (/ start-point center-points side diameter rectangle-side 
                       divider oldsnap
                      ) 
-  (setq oldsnap (getvar "osmode"))
-  (setvar "osmode" 0)
+  (setq oldsnap (getvar "OSMODE"))
+  (setvar "OSMODE" 0)
 
   (setq start-point (getpoint "\nEnter start point: "))
   (setq center-points (list start-point 
@@ -89,7 +89,7 @@
     (/ side divider)
   )
 
-  (setvar "osmode" oldsnap)
+  (setvar "OSMODE" oldsnap)
 
   (print "Figures created.")
   (princ)
